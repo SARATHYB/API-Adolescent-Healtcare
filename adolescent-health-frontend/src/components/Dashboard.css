@@ -1,0 +1,82 @@
+.dashboard-container {
+    display: flex;
+    height: 80vh;
+    width: 180vh;
+    background-color: #e9f5fb;
+
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-right: 1px solid #dee2e6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.sidebar ul {
+    list-style-type: lower-greek;
+    padding-left: 40px;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.logout-button {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #e9f5fb;
+
+}
+
+.dashboard-heading {
+
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.health-data,
+.appointment-reminders {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.health-data p,
+.appointment-reminders p {
+    margin: 8px 0;
+}
