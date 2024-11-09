@@ -1,0 +1,93 @@
+Endpoints:
+
+1. User Management:
+
+    POST /register: Create a new user (adolescent or guardian).
+
+    POST /login: Authenticate the user and issue a JWT token.
+
+    POST /logout: Log out the user and invalidate the session token.
+
+
+2. Health Dashboard:
+
+    GET /dashboard: Retrieve an overview of the adolescent’s health metrics.
+
+    POST /dashboard/update: Update the user's health data, including sleep, exercise, water intake, and mood.
+
+
+3. Symptom Checker:
+
+    POST /symptoms/check: Submit a list of symptoms and receive health advice or recommendations on next steps.
+
+
+4. Mental Health Support:
+
+    GET /mentalhealth/resources: Access mental health resources (articles, videos, tips).
+
+    POST /mentalhealth/self-assessment: Submit responses to a mental health self-assessment survey.
+
+    POST /mentalhealth/book-session: Book an appointment with a therapist or counselor.
+
+
+5. Sexual and Reproductive Health:
+
+    GET /reproductive-health/articles: Access articles related to sexual and reproductive health for adolescents.
+
+    POST /reproductive-health/menstrual-tracker: Submit menstrual cycle data for tracking.
+
+    POST /reproductive-health/ask-question: Submit a confidential health question to a professional.
+
+
+6. Appointments and Reminders:
+
+  POST /appointments/book: Book an appointment with a healthcare provider.
+
+  GET /appointments/reminders: Retrieve upcoming appointment and vaccination reminders.
+
+
+7. Fitness and Nutrition:
+
+    GET /nutrition/plan: Receive a personalized nutrition plan.
+
+    POST /fitness/tracker: Log daily fitness activities such as exercise or sports.
+
+
+8. Guardian Access:
+
+    POST /guardian/access-request: Request access to an adolescent’s health data (with adolescent consent).
+
+    GET /guardian/view-data: View the permitted health data for the adolescent.
+
+
+Authentication & Security:
+
+· JWT Authentication: All endpoints require a valid token for access after login.
+
+· Role-Based Access: Different levels of access based on user roles (adolescent, guardian, healthcare provider).
+
+---
+
+Error Handling:
+
+
+· 400 Bad Request: Invalid input data.
+
+· 401 Unauthorized: Missing or invalid authentication token.
+
+· 403 Forbidden: Unauthorized access to a resource.
+
+· 404 Not Found: Requested resource does not exist.
+
+· 500 Internal Server Error: General server error.
+
+---
+
+Example Use Cases:
+
+
+· Scenario 1: An adolescent signs up, logs health metrics, and tracks their mental health progress.
+
+· Scenario 2: A user checks their symptoms through the symptom checker and books a doctor’s appointment for follow-up.
+
+· Scenario 3: A guardian requests access to monitor an adolescent’s vaccination records and appointment schedule.
