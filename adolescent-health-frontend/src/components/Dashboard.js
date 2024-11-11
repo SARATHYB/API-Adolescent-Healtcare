@@ -5,6 +5,8 @@ import './Dashboard.css';
 
 const Dashboard = ({ setToken, token }) => {
     const [healthData, setHealthData] = useState(null);
+    const [userId, setUserId] = useState(null);
+    const [userName, setuserName] = useState('');
     const [reminders, setReminders] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -21,6 +23,8 @@ const Dashboard = ({ setToken, token }) => {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 setHealthData(response.data.healthData);
+                setUserId(response.data.userId);
+                setuserName(response.data.userName);
             } catch (error) {
                 console.error('Failed to fetch health data:', error);
             }
@@ -66,6 +70,15 @@ const Dashboard = ({ setToken, token }) => {
             </nav>
             <div className="main-content">
                 <h2 className="dashboard-heading">Dashboard</h2>
+
+                {userName && (
+                    <div className="user-info">
+                        <h3>Welcome {userName}</h3>
+
+                        <p>Your User ID:</p>
+                        <p>{userId}</p>
+                    </div>
+                )}
 
                 {/* Health Data Section */}
                 <div className="health-data">

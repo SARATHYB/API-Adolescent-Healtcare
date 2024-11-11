@@ -86,13 +86,14 @@ app.post('/login', async (req, res) => {
 
 app.get('/dashboard', verifyToken, async (req, res) => {
     try {
-        const userId = req.user.id; // Update to use `req.user.id` instead of `req.user.userId`
-        const user = await User.findById(userId).select('healthData');
-        if (!user) return res.status(404).json({ error: 'User not found' });
-
-        res.json({ healthData: user.healthData });
+        const user = await User.findById(req.user.id); // Assuming req.user.id contains the user's ObjectId
+        res.json({
+            healthData: user.healthData,
+            userId: user._id,// Include ObjectId in response
+            userName: user.username
+        });
     } catch (error) {
-        res.status(500).json({ error: 'Failed to retrieve dashboard data', details: error });
+        res.status(500).json({ error: 'Failed to fetch user data' });
     }
 });
 
