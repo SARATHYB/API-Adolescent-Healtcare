@@ -1,0 +1,44 @@
+#For the back-end:
+
+NEEDED PACKAGES - 
+
+    npm install express mongoose jsonwebtoken bcryptjs
+
+
+TO START - 
+
+    node app.js
+
+
+CHECK ENDPOINTS - 
+    USE POSTMAN
+
+
+#For the front-end:
+ 
+---TERMINAL---
+
+TO CREATE - 
+
+    npx create-react-app adolescent-health-frontend
+
+    cd adolescent-health-frontend
+
+    npm install axios
+
+
+IF ANY VULNERABILITIES - 
+
+    npm audit fix --force
+
+once you have done,
+
+
+TO START - 
+
+    npm start
+
+
+NEEDED PACKAGES - 
+
+    npm install react-router-dom
